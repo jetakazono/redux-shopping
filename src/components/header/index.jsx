@@ -5,9 +5,10 @@ import Cart from "../cart/index"
 
 import * as Styles from "./styles"
 
-import { loginUser, logoutUser } from "../../redux/user/actions"
+// import { loginUser, logoutUser } from "../../redux/user/actions"
 import { selectProductsCount } from "../../redux/cart/cart-selector"
 import { BsFillCartFill } from "react-icons/bs"
+import { login, logout } from "../../redux/user/slice"
 
 function Header() {
     const [cartIsVisible, setCartIsVisible] = useState(false)
@@ -23,13 +24,11 @@ function Header() {
     }
 
     const handleLoginClick = () => {
-        dispatch(
-            loginUser({ name: "Jessica Dolza", email: "jessie@dolza.com" })
-        )
+        dispatch(login({ name: "Jessica", email: "jessie@dolza.com" }))
     }
 
     const handleLogoutClick = () => {
-        dispatch(logoutUser())
+        dispatch(logout())
     }
 
     return (
@@ -38,7 +37,7 @@ function Header() {
             <Styles.Buttons>
                 {currentUser ? (
                     <>
-                        <div>Hello {currentUser.name.split(" ")[0]}</div>
+                        <div>Hello {currentUser.name}</div>
                         <div onClick={handleLogoutClick}>Sign out</div>
                     </>
                 ) : (

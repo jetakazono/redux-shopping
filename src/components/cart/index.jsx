@@ -16,9 +16,14 @@ const Cart = ({ isVisible, setIsVisible }) => {
                 {products.map((product) => (
                     <CartItem product={product} key={product.id} />
                 ))}
-                {products.length && (
+                {products.length !== 0 ? (
                     <Styles.CartTotal>
-                        Total R$<span>{totalPrice}</span>
+                        Total R$
+                        <span>{totalPrice}</span>
+                    </Styles.CartTotal>
+                ) : (
+                    <Styles.CartTotal>
+                        Oh no! it looks so empty :(
                     </Styles.CartTotal>
                 )}
             </Styles.CartContent>

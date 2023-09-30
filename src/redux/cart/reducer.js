@@ -10,7 +10,6 @@ const cartReducer = (state = initialState, action) => {
             const productIsAlreadyInCart = state.products.some(
                 (product) => product.id === action.payload.id
             )
-            console.log(productIsAlreadyInCart)
             if (productIsAlreadyInCart) {
                 return {
                     ...state,
