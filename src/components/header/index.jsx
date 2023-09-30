@@ -7,6 +7,7 @@ import * as Styles from "./styles"
 
 import { loginUser, logoutUser } from "../../redux/user/actions"
 import { selectProductsCount } from "../../redux/cart/cart-selector"
+import { BsFillCartFill } from "react-icons/bs"
 
 function Header() {
     const [cartIsVisible, setCartIsVisible] = useState(false)
@@ -33,11 +34,11 @@ function Header() {
 
     return (
         <Styles.Container>
-            <Styles.Logo>Jessie Store :)</Styles.Logo>
+            <Styles.Logo>My Store :)</Styles.Logo>
             <Styles.Buttons>
                 {currentUser ? (
                     <>
-                        <div>Hello {currentUser.name}</div>
+                        <div>Hello {currentUser.name.split(" ")[0]}</div>
                         <div onClick={handleLogoutClick}>Sign out</div>
                     </>
                 ) : (
@@ -45,8 +46,8 @@ function Header() {
                 )}
                 <div>
                     <div onClick={handleCartClick}>
-                        <span>Basket</span>
-                        <span>({productsCount})</span>
+                        <BsFillCartFill />
+                        <span>{productsCount}</span>
                     </div>
                 </div>
             </Styles.Buttons>

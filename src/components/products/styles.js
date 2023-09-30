@@ -8,8 +8,9 @@ export const Container = styled.div`
     justify-content: center;
     padding: 40px;
     margin-top: 50px;
+
     @media (max-width: 768px) {
         flex-direction: column;
-        padding: 10px;
+        padding: 40px 10px;
     }
 `
