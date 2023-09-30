@@ -11,8 +11,8 @@ This is a simple web application that allows users to add, remove, increase, and
 3. Increase and Decrease Product Quantity
    Users can increase or decrease the quantity of a product in their basket.
 4. Sign In and Sign Out
-   Users can sign in to access their personalized basket and account settings.
-   Users can sign out when they are done.
+   Users can sign in.
+   Users can sign out.
 
 ## Technology Stack
 
